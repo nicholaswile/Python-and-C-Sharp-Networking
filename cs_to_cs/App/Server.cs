@@ -36,11 +36,14 @@ namespace MyNetwork {
             // Start listening for client requests to connect
             Console.WriteLine("Listening for connection requests...");
             tcp_server_socket.Listen(100);
-            
+        
             var handler = await tcp_server_socket.AcceptAsync();
 
             Console.WriteLine("Received request from client.");
             Console.WriteLine("Accepted request from client.");
+            string client_address = "";
+            client_address += handler.RemoteEndPoint;
+            Console.WriteLine("Connected to: " + client_address);
             
             while (true)
             {
@@ -65,6 +68,7 @@ namespace MyNetwork {
                     break;
                 }
             }
+            Console.WriteLine("Closing connection...");
         }
     }
 }

@@ -4,7 +4,9 @@
 
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
+using System.Timers;
 
 namespace MyNetwork {
     class Client {
@@ -21,6 +23,13 @@ namespace MyNetwork {
             // Max data size that can be sent and received
             int BUFFER_SIZE = 1024;
 
+            Console.Write("Enter a message to send to the server: ");
+            var TEST_MESSAGE = "";
+            TEST_MESSAGE += Console.ReadLine();
+            var EOM = "<|EOM|>";
+            TEST_MESSAGE += EOM;
+            var encoded_message = Encoding.UTF8.GetBytes(TEST_MESSAGE);
+
             // Create address which will be bound to the socket
             IPEndPoint ip_endpoint = new(TCP_HOST_IP, TCP_PORT);
 
@@ -30,24 +39,19 @@ namespace MyNetwork {
             
             // Create a socket 
             using Socket client = new(SOCKET_FAMILY, SOCKET_TYPE, PROTOCOL_TYPE);
-            
+
             // Bind the address to the socket
             // Connect to TCP server
             Console.WriteLine("Requesting to connect to server...");
             await client.ConnectAsync(ip_endpoint);
-            Console.WriteLine("Succesfully connected to server.");
-
-            Console.Write("Enter a message to send to the server: ");
-            var TEST_MESSAGE = "";
-            TEST_MESSAGE += Console.ReadLine();
-            TEST_MESSAGE += "<|EOM|>";
-            var encoded_message = Encoding.UTF8.GetBytes(TEST_MESSAGE);
+            Console.WriteLine("Connected to server.");
 
             while (true)
             {
                 // Send message to server
                 _ = await client.SendAsync(encoded_message, SocketFlags.None);
-                Console.WriteLine($"Socket client sent message: \"{TEST_MESSAGE}\"");
+                Console.WriteLine("Sending message to server...");
+                Console.WriteLine($"Socket client sent message: \"{TEST_MESSAGE.Replace(EOM,"")}\"");
 
                 // Receive ack.
                 var buffer = new byte[BUFFER_SIZE];

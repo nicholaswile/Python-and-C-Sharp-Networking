@@ -8,6 +8,7 @@ SOCKET_FAMILY = socket.AF_INET # Internet
 SOCKET_TYPE = socket.SOCK_STREAM # TCP socket
 
 # Instantiate socket
+print("Running Server")
 tcp_server_socket = socket.socket(SOCKET_FAMILY, SOCKET_TYPE)
 
 # Current device in network (destination for packets)
@@ -30,22 +31,21 @@ print("Received request from client.")
 print("Accepted request from client.")
 print("Connected to: ", client_address)
 
-TEST_MESSAGE = "Received data: "
+TEST_MESSAGE = "<|ACK|>"
 
 while True:
     data = client_socket.recv(BUFFER_SIZE)
     decoded_message = data.decode()
-    TEST_MESSAGE += decoded_message
-    
     encoded_message = TEST_MESSAGE.encode()
 
     if not data: break
 
-print('-' * 20)
-print("Received message from client: ", decoded_message)
-print('=' * 20)
+    print('-' * 20)
+    print("Received message from client: \""+decoded_message+"\"")
+    print('=' * 20)
 
-client_socket.send(encoded_message)
+    client_socket.send(encoded_message)
+    print("Socket server sent acknowledgement: \""+TEST_MESSAGE+"\"")
 
 print("Closing connection...")
 client_socket.close()
