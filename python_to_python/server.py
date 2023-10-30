@@ -40,6 +40,10 @@ while True:
 
     if not data: break
 
+    # If message comes from a C# client
+    eom = "<|EOM|>"
+    decoded_message = decoded_message.replace(eom, "")
+
     print('-' * 20)
     print("Received message from client: \""+decoded_message+"\"")
     print('=' * 20)
