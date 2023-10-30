@@ -7,6 +7,10 @@ Eventually planning to host a pre-trained machine learning model on the Python s
 ## Updates
 
 ### 2023-10-30
+Tested connection between a Python client and C# server.
+![A Python client connects to a C# server from the command line.](screenshots/py2cs.png)
+
+### 2023-10-30
 Tested connection between a C# client and Python server.
 ![A C# client connects to a Python server from the command line.](screenshots/cs2py.png)
 

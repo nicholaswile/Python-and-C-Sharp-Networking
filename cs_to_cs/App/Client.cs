@@ -4,9 +4,7 @@
 
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.ConstrainedExecution;
 using System.Text;
-using System.Timers;
 
 namespace MyNetwork {
     class Client {
