@@ -1,6 +1,6 @@
 # Created 2023-10-30 by NW
 
-# Client implementation in Python
+# Client socket implementation in Python
 
 import socket
 

@@ -1,12 +1,13 @@
 # Created 2023-10-30 by NW
 
-# Socket implementation in Python
+# Server socket implementation in Python
 
 import socket
 
 SOCKET_FAMILY = socket.AF_INET # Internet
 SOCKET_TYPE = socket.SOCK_STREAM # TCP socket
 
+# Instantiate socket
 tcp_server_socket = socket.socket(SOCKET_FAMILY, SOCKET_TYPE)
 
 # Current device in network (destination for packets)
@@ -40,11 +41,11 @@ while True:
 
     if not data: break
 
-    print('-' * 20)
-    print("Received message from client: ", decoded_message)
-    print('=' * 20)
+print('-' * 20)
+print("Received message from client: ", decoded_message)
+print('=' * 20)
 
-    client_socket.send(encoded_message)
+client_socket.send(encoded_message)
 
 print("Closing connection...")
 client_socket.close()
