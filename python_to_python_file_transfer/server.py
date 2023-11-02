@@ -4,7 +4,7 @@
 
 import os
 import socket
-import tqdm
+#import tqdm
 
 SOCKET_FAMILY = socket.AF_INET # Internet
 SOCKET_TYPE = socket.SOCK_STREAM # TCP socket
@@ -43,8 +43,6 @@ decoded_message = data.decode()
 filename, filesize = decoded_message.split(SEPARATOR)
 filename = os.path.basename(filename)
 filesize = int(filesize)
-
-progress = tqdm.tqdm(range(filesize), f"Receiving \"{filename}\"", unit="B", unit_scale=True, unit_divisor=1024)
 
 path = "../test_files_transfer/server/new_"
 filepath = path + filename

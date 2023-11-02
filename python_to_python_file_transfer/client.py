@@ -53,13 +53,15 @@ print("Connected to server.")
 # Send encoded file to server
 print("Sending file to server...")
 file_string = f"{filepath}{SEPARATOR}{filesize}"
-tcp_client_socket.send(file_string.encode())
+#print(file_string)
+encoded_string = file_string.encode()
+tcp_client_socket.send(encoded_string)
 print("Socket client sent file to server: \""+filepath+"\"")
 
 with open (filepath, "rb") as f:
     while True:
         bytes_read = f.read(BUFFER_SIZE) # Read bytes
-        tcp_client_socket.send(bytes_read) # Send bytes
+        tcp_client_socket.sendall(bytes_read) # Send bytes
         if not bytes_read: break # Finished reading file
 
 # tcp_client_socket.send(EOM.encode())
