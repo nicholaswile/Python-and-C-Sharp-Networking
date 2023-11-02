@@ -4,7 +4,6 @@
 
 import os
 import socket
-import tqdm # File transfer progress bar
 
 SOCKET_FAMILY = socket.AF_INET # Internet
 SOCKET_TYPE = socket.SOCK_STREAM # TCP socket
@@ -19,7 +18,7 @@ TCP_PORT = 5500
 # Max data size that can be sent and received
 BUFFER_SIZE = 1024
 
-SEPERATOR = "<SEPARATOR>"
+SEPARATOR = "<SEPARATOR>"
 EOM = "<EOM>"
 
 # The path of the file we want to send
@@ -53,21 +52,17 @@ print("Connected to server.")
 
 # Send encoded file to server
 print("Sending file to server...")
-tcp_client_socket.send(f"{filepath}{SEPARATOR}{filesize}{EOM}".encode())
+file_string = f"{filepath}{SEPARATOR}{filesize}"
+tcp_client_socket.send(file_string.encode())
 print("Socket client sent file to server: \""+filepath+"\"")
 
-# Progress bar sending the file
-progress = tqdm.tqdm(range(filesize), f"Sending {filename}", unit="B", unit_scale=True, unit_divisor=BUFFER_SIZE)
-with open (filename, "rb") as f:
+with open (filepath, "rb") as f:
     while True:
-        # read bytes from file
-        bytes_read = f.read(BUFFER_SIZE)
-        if not bytes_read:
-            # Done sending the file
-            break
-        tcp_socket_client.sendall(bytes_read)
-        # update bar
-        progress.update(len(bytes_read))
+        bytes_read = f.read(BUFFER_SIZE) # Read bytes
+        tcp_client_socket.send(bytes_read) # Send bytes
+        if not bytes_read: break # Finished reading file
+
+# tcp_client_socket.send(EOM.encode())
 
 data = tcp_client_socket.recv(BUFFER_SIZE)
 decoded_message = data.decode()
