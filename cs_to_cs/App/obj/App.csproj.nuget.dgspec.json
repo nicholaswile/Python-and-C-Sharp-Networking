@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\app\\App.csproj": {}
+    "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\App\\App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\app\\App.csproj": {
+    "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\App\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\app\\App.csproj",
+        "projectUniqueName": "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\App\\App.csproj",
         "projectName": "App",
-        "projectPath": "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\app\\App.csproj",
+        "projectPath": "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\App\\App.csproj",
         "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\app\\obj\\",
+        "outputPath": "C:\\Users\\nicho\\OneDrive\\Desktop\\Fall2023\\GRA_F23\\Python_C#_Networking\\cs_to_cs\\App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
