@@ -7,6 +7,10 @@ Eventually planning to host a pre-trained machine learning model on the Python s
 ## Updates
 
 ### 2023-11-02
+Implemented Unity client interface to write a custom message to the Python server, and display what the Python server sent.
+![A Unity client connects to a Python server, now with a UI.](screenshots/unity2py_ui.png)
+
+### 2023-11-02
 Implemented connection between a C#/Unity client and a Python server.
 ![A Unity client connects to a Python server.](screenshots/unity2py.png)
 
