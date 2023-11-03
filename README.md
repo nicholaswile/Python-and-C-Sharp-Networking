@@ -7,6 +7,10 @@ Eventually planning to host a pre-trained machine learning model on the Python s
 ## Updates
 
 ### 2023-11-02
+Implemented connection between a C#/Unity client and a Python server.
+![A Unity client connects to a Python server.](screenshots/unity2py.png)
+
+### 2023-11-02
 Implemented image file transfer between a Python client and Python server.
 ![A Python client sends an image to a Python server from the command line.](screenshots/py2pyftp.png)
 
