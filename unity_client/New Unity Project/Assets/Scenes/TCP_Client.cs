@@ -1,4 +1,4 @@
-// Created 2023-10-30 and adapted 2023-11-02 by NW
+// 2023-11-02 by NW
 
 // Client socket implementation in C#
 
