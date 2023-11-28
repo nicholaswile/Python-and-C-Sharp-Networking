@@ -8,12 +8,12 @@ using System;
 // UI
 using TMPro;
 using UnityEngine.UI;
-using System.IO;
 
 public class Screenshot : MonoBehaviour
 {
     [SerializeField] private TMP_Text display_text;
     [SerializeField] private Button button;
+    [SerializeField] private GameObject client;
 
     string path = "Assets/Screenshots/screenshot";
 
@@ -24,6 +24,8 @@ public class Screenshot : MonoBehaviour
         ScreenCapture.CaptureScreenshot(path + "-" + formatted_time + ".png");
         display_text.text = "Took Screenshot at " + formatted_time + "!";
         display_text.text += "\nSaving screenshot to screenshots folder...";
+
+        client.SetActive(true);
     }
 
     private void Start()

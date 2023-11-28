@@ -7,6 +7,11 @@ Eventually planning to host a pre-trained machine learning model on the Python s
 ## Updates
 
 ### 2023-11-27
+Implemented screenshot sharing between a C#/Unity client and a Python server.
+![A Unity client sends an image to a Python server.](screenshots/unity2pyftp.png)
+
+
+### 2023-11-27
 Implemented image file transfer between a C# client and Python server.
 ![A C# client sends an image to a Python server.](screenshots/cs2pyftp.png)
 
