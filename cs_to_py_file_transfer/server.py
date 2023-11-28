@@ -44,7 +44,7 @@ filename, filesize = decoded_message.split(SEPARATOR)
 filename = os.path.basename(filename)
 filesize = int(filesize)
 
-path = "../test_files_transfer/server/new_"
+path = "../test_files_transfer/unity_listener/new_"
 filepath = path + filename
 with open(filepath, "wb") as f:
     while True:
