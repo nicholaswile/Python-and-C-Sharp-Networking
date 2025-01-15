@@ -42,3 +42,6 @@ Implemented connection between a C# client and C# server.
 ### 2023-10-30
 Implemented connection between a Python client and Python server.
 ![A Python client connects to a Python server from the command line.](screenshots/py2py.png)
+
+### Credits
+Created by <a href="https://www.github.com/nicholaswile">@nicholaswile</a>.
